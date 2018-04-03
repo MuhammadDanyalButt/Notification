@@ -2,6 +2,7 @@ package com.example.database.dani.notification;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class List_Activity extends AppCompatActivity {
@@ -21,7 +22,8 @@ public class List_Activity extends AppCompatActivity {
         listview();
     }
     public  void listview(){
-        CustomAdapterClass customAdapterClass =new CustomAdapterClass(this,R.layout.namelist,Names);
-        listView.setAdapter(customAdapterClass);
+        listView = findViewById(R.id.list);
+        ArrayAdapter<String> adapter=new ArrayAdapter<>(this,R.layout.namelist,Names);
+        listView.setAdapter(adapter);
     }
 }
